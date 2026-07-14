@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 創意內容行銷實戰班｜生活服務產業進擊班｜銘傳大學</title>
+<meta name="description" content="經濟部商業發展署 115-116年度強化服務業人才韌性計畫．銘傳大學傳播學院執行．120小時次產業AI應用課程＋122小時企業專題實作，鎖定生活服務業的Claude、ChatGPT、Gemini三大AI深度應用人才培育。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B1526;
+    --ink-soft:#4A4356;
+    --paper:#FCF2E2;
+    --paper-deep:#F5E6CD;
+    --card:#FFFFFF;
+    --line: rgba(27,21,38,.14);
+    --line-soft: rgba(27,21,38,.08);
+    --raspberry:#E4407A;
+    --raspberry-deep:#AC2D5C;
+    --claude:#C1622F;
+    --claude-bg:#FBE9DD;
+    --chatgpt:#0E9F76;
+    --chatgpt-bg:#DFF4EC;
+    --gemini:#3B6FE0;
+    --gemini-bg:#E4EBFC;
+    --moss:#566B45;
+    --gold:#C8963E;
+    --radius:18px;
+    --serif: "Noto Serif TC", "PMingLiU", serif;
+    --sans: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    --mono: "IBM Plex Mono", "Consolas", monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--card);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3,h4{font-family:var(--serif);margin:0;line-height:1.28;letter-spacing:.01em;}
+  p{margin:0;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.78rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--raspberry-deep);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--raspberry-deep);display:inline-block;}
+  section{padding:96px 0;position:relative;}
+  .section-tight{padding:72px 0;}
+  .section-head{max-width:680px;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(1.7rem,3.2vw,2.5rem);margin-top:14px;}
+  .section-head .lede{margin-top:16px;color:var(--ink-soft);font-size:1.02rem;}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 26px;
+    border-radius:999px;
+    font-family:var(--mono);
+    font-size:.86rem;
+    letter-spacing:.04em;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--raspberry);color:#fff;box-shadow:0 10px 24px -10px rgba(228,64,122,.65);}
+  .btn-primary:hover{box-shadow:0 14px 30px -10px rgba(228,64,122,.75);}
+  .btn-ghost{border-color:rgba(255,255,255,.4);color:#fff;}
+  .btn-ghost:hover{border-color:#fff;}
+  .btn-outline{border-color:var(--ink);color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:#fff;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(252,242,226,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:1140px;margin:0 auto;
+  }
+  .brand{display:flex;flex-direction:column;gap:2px;}
+  .brand .b-top{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--ink-soft);}
+  .brand .b-main{font-family:var(--serif);font-weight:700;font-size:1.08rem;}
+  .navlinks{display:flex;gap:26px;font-size:.88rem;list-style:none;margin:0;padding:0;}
+  .navlinks a{text-decoration:none;color:var(--ink-soft);position:relative;padding:4px 0;}
+  .navlinks a:hover{color:var(--raspberry-deep);}
+  .navcta{display:flex;align-items:center;gap:14px;}
+  .burger{display:none;background:none;border:none;font-family:var(--mono);font-size:.85rem;cursor:pointer;}
+  @media(max-width:920px){
+    .navlinks{display:none;}
+    .burger{display:block;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:radial-gradient(1200px 600px at 78% -10%, #2B2038 0%, var(--ink) 55%);
+    color:#F4EDE0;
+    padding:88px 0 0;
+    overflow:hidden;
+    position:relative;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-140px;top:-80px;width:520px;height:520px;
+    background:conic-gradient(from 200deg, var(--claude), var(--chatgpt), var(--gemini), var(--claude));
+    filter:blur(90px);opacity:.28;border-radius:50%;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:end;position:relative;z-index:2;}
+  @media(max-width:920px){.hero-grid{grid-template-columns:1fr;}}
+  .hero-eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;color:#E9B7CC;text-transform:uppercase;}
+  .hero h1{
+    font-size:clamp(2.1rem,4.6vw,3.5rem);
+    margin-top:18px;color:#FBF6EC;
+    max-width:15ch;
+  }
+  .hero h1 em{font-style:normal;color:var(--raspberry);}
+  .hero-lede{margin-top:22px;color:#D8CFE0;font-size:1.06rem;max-width:52ch;}
+  .hero-ctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
+  .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px;}
+  .tag-chip{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.03em;
+    border:1px solid rgba(255,255,255,.25);border-radius:999px;
+    padding:7px 14px;color:#EFE6F5;
+  }
+  .hero-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:var(--radius);
+    padding:28px;
+    backdrop-filter:blur(6px);
+  }
+  .hero-card .hc-label{font-family:var(--mono);font-size:.72rem;color:#C9BEDB;letter-spacing:.08em;}
+  .hero-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:18px;}
+  .hero-stat b{display:block;font-family:var(--serif);font-size:1.9rem;color:#fff;}
+  .hero-stat span{font-size:.82rem;color:#C9BEDB;}
+  .hero-strip{
+    margin-top:60px;
+    border-top:1px solid rgba(255,255,255,.14);
+    display:flex;flex-wrap:wrap;gap:0;
+  }
+  .hero-strip div{
+    flex:1 1 200px;
+    padding:20px 0;
+    border-right:1px solid rgba(255,255,255,.12);
+    padding-left:2px;
+  }
+  .hero-strip div:last-child{border-right:none;}
+  .hero-strip b{display:block;font-family:var(--serif);font-size:1.5rem;color:#fff;}
+  .hero-strip span{font-size:.78rem;color:#C9BEDB;}
+
+  /* ---------- Pain points ---------- */
+  .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media(max-width:880px){.pain-grid{grid-template-columns:1fr;}}
+  .pain-card{
+    background:var(--paper);
+    border:1px solid var(--line-soft);
+    border-radius:var(--radius);
+    padding:30px;
+  }
+  .pain-num{font-family:var(--mono);font-size:.78rem;color:var(--raspberry-deep);letter-spacing:.06em;}
+  .pain-card h3{font-size:1.18rem;margin-top:14px;}
+  .pain-card p{margin-top:12px;color:var(--ink-soft);font-size:.94rem;}
+  .direction-banner{
+    margin-top:26px;
+    display:flex;gap:18px;align-items:flex-start;
+    background:var(--ink);color:#F4EDE0;
+    border-radius:var(--radius);
+    padding:28px 30px;
+  }
+  .direction-banner .db-mark{
+    font-family:var(--serif);font-size:2rem;color:var(--raspberry);flex:0 0 auto;
+  }
+  .direction-banner p{color:#D8CFE0;font-size:.95rem;}
+  .direction-banner strong{color:#fff;}
+
+  /* ---------- AI tools signature ---------- */
+  .tools-section{background:var(--ink);color:#F4EDE0;}
+  .tools-section .section-head .lede{color:#C9BEDB;}
+  .tools-section .eyebrow{color:#E9B7CC;}
+  .tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:900px){.tool-grid{grid-template-columns:1fr;}}
+  .tool-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius);
+    padding:30px;
+    position:relative;
+    overflow:hidden;
+  }
+  .tool-card .tc-bar{position:absolute;left:0;top:0;bottom:0;width:5px;}
+  .tool-card.claude .tc-bar{background:var(--claude);}
+  .tool-card.chatgpt .tc-bar{background:var(--chatgpt);}
+  .tool-card.gemini .tc-bar{background:var(--gemini);}
+  .tc-badge{
+    display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;
+    padding:5px 12px;border-radius:999px;margin-bottom:16px;
+  }
+  .tool-card.claude .tc-badge{background:var(--claude);color:#fff;}
+  .tool-card.chatgpt .tc-badge{background:var(--chatgpt);color:#fff;}
+  .tool-card.gemini .tc-badge{background:var(--gemini);color:#fff;}
+  .tool-card h3{color:#fff;font-size:1.32rem;}
+  .tool-card .tc-en{font-family:var(--mono);font-size:.76rem;color:#C9BEDB;display:block;margin-top:4px;}
+  .tool-card ul{margin:18px 0 0;padding-left:18px;color:#D8CFE0;font-size:.9rem;}
+  .tool-card li{margin-bottom:8px;}
+  .support-tools{margin-top:34px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+  .support-tools span.lab{font-family:var(--mono);font-size:.76rem;color:#C9BEDB;margin-right:6px;}
+
+  /* ---------- Audience ---------- */
+  .audience-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;}
+  @media(max-width:900px){.audience-grid{grid-template-columns:1fr;}}
+  .aud-list{list-style:none;margin:0;padding:0;}
+  .aud-list li{
+    display:flex;gap:16px;padding:20px 0;border-top:1px solid var(--line-soft);
+  }
+  .aud-list li:last-child{border-bottom:1px solid var(--line-soft);}
+  .aud-tag{
+    font-family:var(--mono);font-size:.72rem;color:var(--raspberry-deep);
+    background:var(--claude-bg);padding:4px 10px;border-radius:8px;height:fit-content;white-space:nowrap;
+  }
+  .aud-list h4{font-size:1rem;margin-bottom:4px;}
+  .aud-list p{color:var(--ink-soft);font-size:.9rem;}
+  .side-box{background:var(--paper);border-radius:var(--radius);padding:28px;border:1px solid var(--line-soft);}
+  .side-box h4{font-size:1rem;font-family:var(--sans);font-weight:700;margin-bottom:14px;}
+  .side-box ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:.9rem;}
+  .side-box li{margin-bottom:8px;}
+  .priority-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .priority-tags span{
+    font-size:.78rem;background:var(--card);border:1px solid var(--line);
+    padding:6px 12px;border-radius:999px;
+  }
+
+  /* ---------- Path timeline ---------- */
+  .path-track{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  @media(max-width:880px){.path-track{grid-template-columns:1fr;}}
+  .path-track::before{
+    content:"";position:absolute;top:26px;left:0;right:0;height:1px;background:var(--line);
+  }
+  @media(max-width:880px){.path-track::before{display:none;}}
+  .path-step{padding:0 22px 0 0;position:relative;}
+  .path-num{
+    width:52px;height:52px;border-radius:50%;background:var(--card);
+    border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-size:.95rem;position:relative;z-index:2;color:var(--raspberry-deep);
+  }
+  .path-step h4{margin-top:18px;font-size:1.02rem;}
+  .path-step p{margin-top:8px;color:var(--ink-soft);font-size:.88rem;}
+
+  /* ---------- Class schedule ---------- */
+  .class-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  @media(max-width:820px){.class-grid{grid-template-columns:1fr;}}
+  .class-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px;
+  }
+  .class-card .cc-head{display:flex;justify-content:space-between;align-items:baseline;}
+  .class-card .cc-tag{font-family:var(--mono);font-size:.74rem;color:var(--raspberry-deep);}
+  .class-card h3{margin-top:8px;font-size:1.3rem;}
+  .cc-row{display:flex;justify-content:space-between;padding:12px 0;border-top:1px dashed var(--line);font-size:.9rem;}
+  .cc-row span:first-child{color:var(--ink-soft);}
+  .cc-row span:last-child{font-family:var(--mono);font-weight:500;}
+  .location-note{
+    margin-top:24px;padding:20px 24px;background:var(--paper);border-radius:14px;
+    font-size:.9rem;color:var(--ink-soft);display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+  }
+
+  /* ---------- Curriculum tables ---------- */
+  .stage-tag{
+    display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);
+    font-size:.78rem;color:var(--raspberry-deep);margin-bottom:10px;
+  }
+  .stage-hours{font-family:var(--serif);font-size:1.6rem;color:var(--ink);}
+  table.curric{
+    width:100%;border-collapse:collapse;margin-top:22px;font-size:.92rem;
+  }
+  table.curric caption{display:none;}
+  table.curric th{
+    text-align:left;font-family:var(--mono);font-weight:500;font-size:.76rem;
+    letter-spacing:.04em;color:var(--ink-soft);text-transform:uppercase;
+    padding:12px 14px;border-bottom:2px solid var(--ink);
+  }
+  table.curric td{
+    padding:16px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top;
+  }
+  table.curric tr:hover td{background:var(--paper);}
+  .hrs{font-family:var(--mono);color:var(--raspberry-deep);white-space:nowrap;}
+  .mod-name{font-weight:700;}
+  .mod-map{display:block;margin-top:4px;font-size:.78rem;color:var(--ink-soft);}
+  .stage-divider{
+    display:flex;align-items:center;gap:16px;margin:64px 0 12px;
+  }
+  .stage-divider .num{
+    font-family:var(--serif);font-size:2rem;color:var(--line);
+  }
+
+  .milestone-track{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:26px;}
+  @media(max-width:1000px){.milestone-track{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:620px){.milestone-track{grid-template-columns:1fr 1fr;}}
+  .ms-card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;
+    font-size:.84rem;
+  }
+  .ms-card .ms-tag{font-family:var(--mono);font-size:.68rem;color:var(--raspberry-deep);}
+  .ms-card h5{font-family:var(--sans);font-weight:700;font-size:.92rem;margin:8px 0 6px;}
+  .ms-card p{color:var(--ink-soft);font-size:.8rem;}
+
+  /* ---------- Partners ---------- */
+  .pyramid{display:grid;grid-template-columns:1fr;gap:16px;}
+  .tier{border-radius:var(--radius);padding:26px 28px;border:1px solid var(--line);}
+  .tier-1{background:var(--ink);color:#F4EDE0;}
+  .tier-1 .tier-label{color:#E9B7CC;}
+  .tier-2{background:var(--paper);}
+  .tier-3{background:var(--card);border-style:dashed;}
+  .tier-label{font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;}
+  .tier h4{margin-top:8px;font-size:1.08rem;}
+  .tier-1 h4{color:#fff;}
+  .tier-companies{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .tier-companies span{
+    font-size:.86rem;padding:8px 14px;border-radius:999px;
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);
+  }
+  .tier-2 .tier-companies span, .tier-3 .tier-companies span{
+    background:var(--card);border:1px solid var(--line);color:var(--ink);
+  }
+  .tier p.desc{margin-top:12px;font-size:.88rem;}
+  .tier-1 p.desc{color:#D8CFE0;}
+  .tier-2 p.desc, .tier-3 p.desc{color:var(--ink-soft);}
+
+  .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px;}
+  @media(max-width:880px){.project-grid{grid-template-columns:1fr;}}
+  .project-card{
+    border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:var(--card);
+  }
+  .project-card .pc-co{font-family:var(--mono);font-size:.76rem;color:var(--raspberry-deep);}
+  .project-card h4{margin-top:8px;font-size:1.08rem;}
+  .pc-pain{margin-top:14px;font-size:.86rem;color:var(--ink-soft);border-left:2px solid var(--line);padding-left:12px;}
+  .pc-topic{margin-top:14px;font-size:.9rem;background:var(--paper);padding:14px 16px;border-radius:12px;}
+  .pc-tools{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;}
+  .pc-tools span{font-family:var(--mono);font-size:.68rem;padding:4px 9px;border-radius:6px;}
+  .pc-tools .t-claude{background:var(--claude-bg);color:var(--claude);}
+  .pc-tools .t-chatgpt{background:var(--chatgpt-bg);color:var(--chatgpt);}
+  .pc-tools .t-gemini{background:var(--gemini-bg);color:var(--gemini);}
+
+  /* ---------- Assessment ---------- */
+  .assess-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+  @media(max-width:880px){.assess-grid{grid-template-columns:1fr;}}
+  .assess-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
+  .assess-card h4{font-size:1.06rem;}
+  .assess-card .ac-sub{font-family:var(--mono);font-size:.76rem;color:var(--ink-soft);margin-top:4px;}
+  .bar-row{margin-top:18px;}
+  .bar-label{display:flex;justify-content:space-between;font-size:.84rem;margin-bottom:6px;}
+  .bar-track{height:8px;border-radius:6px;background:var(--line-soft);overflow:hidden;}
+  .bar-fill{height:100%;border-radius:6px;background:var(--raspberry);}
+  .pass-note{
+    margin-top:20px;padding:14px 16px;border-radius:10px;background:var(--paper);
+    font-size:.82rem;color:var(--ink-soft);
+  }
+  .pass-note b{color:var(--ink);}
+
+  /* ---------- Faculty ---------- */
+  .fac-stats{display:flex;gap:0;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:40px;}
+  .fac-stats div{flex:1 1 160px;padding:22px 4px;border-right:1px solid var(--line);}
+  .fac-stats div:last-child{border-right:none;}
+  .fac-stats b{display:block;font-family:var(--serif);font-size:1.9rem;}
+  .fac-stats span{font-size:.8rem;color:var(--ink-soft);}
+  .fac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media(max-width:900px){.fac-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.fac-grid{grid-template-columns:1fr;}}
+  .fac-card{border:1px solid var(--line);border-radius:14px;padding:20px;}
+  .fac-card .fc-role{font-family:var(--mono);font-size:.68rem;color:var(--raspberry-deep);}
+  .fac-card h5{font-family:var(--sans);font-weight:700;font-size:.98rem;margin:8px 0 6px;}
+  .fac-card p{font-size:.82rem;color:var(--ink-soft);}
+
+  /* ---------- Job placement ---------- */
+  .circle-model{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:820px){.circle-model{grid-template-columns:1fr;}}
+  .circle-card{
+    text-align:left;border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+    background:var(--card);
+  }
+  .circle-card .cn{font-family:var(--serif);font-size:1.6rem;color:var(--raspberry);}
+  .circle-card h4{margin-top:10px;font-size:1rem;}
+  .circle-card p{margin-top:10px;font-size:.86rem;color:var(--ink-soft);}
+  .strategy-list{margin-top:40px;list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:820px){.strategy-list{grid-template-columns:1fr;}}
+  .strategy-list li{
+    display:flex;gap:14px;padding:16px;border:1px solid var(--line-soft);border-radius:12px;font-size:.88rem;
+  }
+  .strategy-list .sl-ico{font-family:var(--mono);color:var(--raspberry-deep);font-weight:600;flex:0 0 auto;}
+
+  /* ---------- Trust / accreditation strip ---------- */
+  .trust-strip{background:var(--ink);color:#F4EDE0;padding:52px 0;}
+  .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  @media(max-width:820px){.trust-grid{grid-template-columns:1fr;}}
+  .trust-card{border-left:2px solid var(--raspberry);padding-left:18px;}
+  .trust-card b{display:block;font-family:var(--serif);font-size:1.1rem;color:#fff;margin-bottom:6px;}
+  .trust-card span{font-size:.86rem;color:#C9BEDB;}
+
+  /* ---------- Apply ---------- */
+  .apply-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  @media(max-width:880px){.apply-steps{grid-template-columns:1fr 1fr;}}
+  @media(max-width:520px){.apply-steps{grid-template-columns:1fr;}}
+  .as-card{background:var(--paper);border-radius:14px;padding:20px;}
+  .as-card .as-num{font-family:var(--mono);color:var(--raspberry-deep);font-size:.78rem;}
+  .as-card h5{margin-top:10px;font-size:.94rem;font-family:var(--sans);font-weight:700;}
+  .as-card p{margin-top:6px;font-size:.82rem;color:var(--ink-soft);}
+  .contact-panel{
+    margin-top:56px;background:var(--ink);color:#F4EDE0;border-radius:var(--radius);
+    padding:44px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;
+  }
+  @media(max-width:820px){.contact-panel{grid-template-columns:1fr;padding:30px;}}
+  .contact-panel h3{color:#fff;font-size:1.5rem;}
+  .contact-panel p{color:#C9BEDB;margin-top:12px;font-size:.94rem;}
+  .contact-info{margin-top:20px;}
+  .contact-info div{padding:12px 0;border-top:1px solid rgba(255,255,255,.14);font-size:.9rem;}
+  .contact-info div:last-child{border-bottom:1px solid rgba(255,255,255,.14);}
+  .contact-info b{display:block;color:#fff;font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;margin-bottom:4px;}
+
+  /* ---------- FAQ ---------- */
+  .faq-item{border-top:1px solid var(--line-soft);padding:22px 0;}
+  .faq-item:last-child{border-bottom:1px solid var(--line-soft);}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:.98rem;}
+  .faq-q::after{content:"+";font-family:var(--mono);font-size:1.2rem;color:var(--raspberry-deep);transition:transform .2s;}
+  details[open] .faq-q::after{transform:rotate(45deg);}
+  .faq-a{margin-top:12px;color:var(--ink-soft);font-size:.9rem;max-width:70ch;}
+  summary{list-style:none;}
+  summary::-webkit-details-marker{display:none;}
+
+  footer{background:var(--paper-deep);padding:36px 0;font-size:.82rem;color:var(--ink-soft);}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <span class="b-top">經濟部商業發展署 × 銘傳大學傳播學院</span>
+      <span class="b-main">AI 創意內容行銷實戰班</span>
+    </div>
+    <nav>
+      <ul class="navlinks">
+        <li><a href="#about">課程定位</a></li>
+        <li><a href="#aitools">三大 AI 心法</a></li>
+        <li><a href="#audience">報名對象</a></li>
+        <li><a href="#classes">班級時程</a></li>
+        <li><a href="#curriculum">課程規劃</a></li>
+        <li><a href="#partners">合作企業</a></li>
+        <li><a href="#assessment">評量標準</a></li>
+      </ul>
+    </nav>
+    <div class="navcta">
+      <a href="#apply" class="btn btn-outline" style="padding:10px 20px;">報名資訊</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-eyebrow">115–116 年度「強化服務業人才韌性計畫」青年 AI 實戰養成班</span>
+        <h1>把生活服務業的行銷難題，<br>交給<em>三大 AI</em> 一起解。</h1>
+        <p class="hero-lede">
+          115 年度「AI 創意內容行銷實戰班—生活服務產業進擊班」由銘傳大學傳播學院執行，
+          以 Claude、ChatGPT、Gemini 三大生成式 AI 工具深度應用為主軸，帶領學員完成客服優化、內容行銷、
+          服務創新與數據決策等五大職能訓練，並進入合作企業真實專題，成為結訓即可上工的生活服務業 AI 即戰力人才。
+        </p>
+        <div class="hero-ctas">
+          <a href="#apply" class="btn btn-primary">查看報名方式</a>
+          <a href="#curriculum" class="btn btn-ghost">檢視雙階段課程</a>
+        </div>
+        <div class="hero-tags">
+          <span class="tag-chip">教育學習</span>
+          <span class="tag-chip">健身</span>
+          <span class="tag-chip">美業</span>
+          <span class="tag-chip">寵物</span>
+          <span class="tag-chip">旅遊</span>
+          <span class="tag-chip">婚禮</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <span class="hc-label">PROGRAM AT A GLANCE</span>
+        <div class="hero-stat-grid">
+          <div class="hero-stat"><b>242</b><span>總時數（小時）</span></div>
+          <div class="hero-stat"><b>2 班 60 人</b><span>115 年招募規模</span></div>
+          <div class="hero-stat"><b>75%</b><span>預期就業媒合率</span></div>
+          <div class="hero-stat"><b>8–10 家</b><span>三層金字塔合作企業</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-strip wrap" style="padding-left:0;padding-right:0;">
+      <div><b>120h</b><span>第一階段．次產業 AI 應用課程</span></div>
+      <div><b>122h</b><span>第二階段．企業專題實作</span></div>
+      <div><b>16 位</b><span>校內外師資，業師占比約 60%</span></div>
+      <div><b>115.7–116.3</b><span>計畫執行期間</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Course Positioning</span>
+      <h2>不是學會操作 AI，而是學會把產業痛點變成 AI 工作流。</h2>
+      <p class="lede">生活服務業從業人口逾百萬人，2024 年整體產值超過新台幣兆元，卻普遍面臨三大結構性痛點。本班以此為出發點設計課程與企業專題，確保結訓學員具備能立即落地的 AI 實戰能力。</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <span class="pain-num">PAIN 01</span>
+        <h3>內容生產效率瓶頸</h3>
+        <p>中小型業者缺乏專職行銷團隊，平均每位行銷人員每週逾 20 小時耗於重複性內容生產，策略思考時間被嚴重壓縮。</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-num">PAIN 02</span>
+        <h3>顧客服務自動化斷層</h3>
+        <p>LINE、IG、官網等多渠道詢問量大，但業者普遍缺乏能設計對話腳本、部署 LINE OA 自動化流程的人才，AI 客服工具形同虛設。</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-num">PAIN 03</span>
+        <h3>數據應用能力不足</h3>
+        <p>逾七成業者的顧客與社群數據處於「蒐集但未用」狀態，缺乏能以 AI 進行清洗、視覺化與策略解讀的人才。</p>
+      </div>
+    </div>
+    <div class="direction-banner reveal">
+      <span class="db-mark">➜</span>
+      <p><strong>培育方向：</strong>以 120 小時「三大 AI 深度掌握」課程架構，訓練學員依工作情境靈活選用 Claude、ChatGPT、Gemini，整合 Canva、Google Sheets、LINE OA、Zapier 等生活服務業必要工具，建立跨平台 AI 協作工作流，完成客服優化、內容行銷、服務創新、數據決策等實務任務。</p>
+    </div>
+  </div>
+</section>
+
+<section id="aitools" class="tools-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Signature Framework</span>
+      <h2>「想得深→Claude；做得多→ChatGPT；查得快→Gemini」</h2>
+      <p class="lede">這是本班貫穿 242 小時課程的工具選用心法。每個模組都會標明適用工具，學員畢業時將建立起「任務→工具→工作流」的個人決策矩陣。</p>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-card claude reveal">
+        <div class="tc-bar"></div>
+        <span class="tc-badge">想得深</span>
+        <h3>Claude<span class="tc-en">DEEP THINKING · LONG-DOCUMENT</span></h3>
+        <ul>
+          <li>長文本分析：合約、服務 SOP、客戶意見彙整</li>
+          <li>多情境客服對話腳本設計與延伸思考</li>
+          <li>競品 SWOT 分析、策略推演與服務創新發想</li>
+        </ul>
+      </div>
+      <div class="tool-card chatgpt reveal">
+        <div class="tc-bar"></div>
+        <span class="tc-badge">做得多</span>
+        <h3>ChatGPT<span class="tc-en">MULTIMODAL · AUTOMATION</span></h3>
+        <ul>
+          <li>多模態應用：競品截圖、海報、圖像生成分析</li>
+          <li>Custom GPTs 打造專屬生活服務業 AI 助理</li>
+          <li>多輪對話 Prompt 策略，應對客服、企劃、內容任務</li>
+        </ul>
+      </div>
+      <div class="tool-card gemini reveal">
+        <div class="tc-bar"></div>
+        <span class="tc-badge">查得快</span>
+        <h3>Gemini<span class="tc-en">SEARCH · GOOGLE ECOSYSTEM</span></h3>
+        <ul>
+          <li>即時資訊搜尋：競品監控、市場情報蒐集</li>
+          <li>深度整合 Gmail、Docs、Sheets 的工作流</li>
+          <li>多語言內容生成，滿足旅遊、婚禮跨境需求</li>
+        </ul>
+      </div>
+    </div>
+    <div class="support-tools reveal">
+      <span class="lab">搭配補充工具：</span>
+      <span class="tag-chip">Canva</span>
+      <span class="tag-chip">Google Sheets</span>
+      <span class="tag-chip">LINE OA</span>
+      <span class="tag-chip">Zapier</span>
+      <span class="tag-chip">Adobe Premiere Rush</span>
+      <span class="tag-chip">Power BI</span>
+    </div>
+  </div>
+</section>
+
+<section id="audience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Who Can Apply</span>
+      <h2>報名對象</h2>
+      <p class="lede">招募對象為 18 至 35 歲青年，具副學士以上學歷，以應屆畢業生或待業者為主，傳播、行銷、設計等相關背景尤佳。採「多管道廣宣＋嚴格篩選」雙軌策略，兩班合計招募 60 名學員。</p>
+    </div>
+    <div class="audience-grid">
+      <ul class="aud-list">
+        <li class="reveal">
+          <span class="aud-tag">主力</span>
+          <div><h4>18–35 歲待業青年</h4><p>具副學士（含二專、五專）以上學歷，希望投入行銷、內容創作或服務業 AI 應用工作者。</p></div>
+        </li>
+        <li class="reveal">
+          <span class="aud-tag">優先</span>
+          <div><h4>應屆畢業生 / 6 個月內待業青年</h4><p>可先以在學證明報名，並於培訓完成後補交畢業證書；應屆待業 6 個月內者於同等評分下優先錄取。</p></div>
+        </li>
+        <li class="reveal">
+          <span class="aud-tag">尤佳</span>
+          <div><h4>傳播、行銷、設計相關背景</h4><p>具備基本電腦操作能力，對社群媒體與內容創作有興趣；持有 Google Ads、Meta 認證者同等優先。</p></div>
+        </li>
+      </ul>
+      <div class="side-box reveal">
+        <h4>特殊優先錄取條件</h4>
+        <ul>
+          <li>具生活服務業工作或實習經驗者</li>
+          <li>應屆畢業 6 個月內之待業青年</li>
+          <li>持有數位行銷、設計或 AI 工具認證者</li>
+          <li>前梯次優秀學員推薦者</li>
+        </ul>
+        <div class="priority-tags">
+          <span>Google Ads 認證</span>
+          <span>Meta 認證</span>
+          <span>作品集加分</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="path" class="section-tight" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Training Path</span>
+      <h2>從報名甄選到就業媒合，一條清楚的 242 小時路線。</h2>
+    </div>
+    <div class="path-track">
+      <div class="path-step reveal"><div class="path-num">01</div><h4>報名與三階段甄選</h4><p>線上報名、書面審查、個別面試，公告錄取與備取名單。</p></div>
+      <div class="path-step reveal"><div class="path-num">02</div><h4>第一階段 120h</h4><p>五大職能模組全班共學，完成三大 AI 工具的深度實戰。</p></div>
+      <div class="path-step reveal"><div class="path-num">03</div><h4>第二階段 122h</h4><p>分組進駐合作企業，完成從痛點界定到正式發表的完整專題。</p></div>
+      <div class="path-step reveal"><div class="path-num">04</div><h4>成果發表與就業媒合</h4><p>企業高層出席發表會，現場一對一媒合面談，銜接結訓後三個月追蹤輔導。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="classes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Class Schedule</span>
+      <h2>115 年度開班一覽</h2>
+      <p class="lede">兩班合計招募 60 人，皆採「學校場域約 80%、企業現場約 20%」混合模式，業師授課比例達約 60%，超過須知規定的 50% 門檻。</p>
+    </div>
+    <div class="class-grid">
+      <div class="class-card reveal">
+        <div class="cc-head"><span class="cc-tag">第一班</span></div>
+        <h3>AI 創意內容行銷實戰班－生活服務產業進擊班 1</h3>
+        <div class="cc-row"><span>上課期間</span><span>115 年 9 月至 11 月</span></div>
+        <div class="cc-row"><span>培訓人數</span><span>30 人</span></div>
+        <div class="cc-row"><span>上課地點</span><span>銘傳大學 ／ 合作企業</span></div>
+        <div class="cc-row"><span>次產業 AI 應用課程</span><span>120 小時</span></div>
+        <div class="cc-row"><span>企業專題實作</span><span>122 小時</span></div>
+      </div>
+      <div class="class-card reveal">
+        <div class="cc-head"><span class="cc-tag">第二班</span></div>
+        <h3>AI 創意內容行銷實戰班－生活服務產業進擊班 2</h3>
+        <div class="cc-row"><span>上課期間</span><span>115 年 11 月至 116 年 1 月</span></div>
+        <div class="cc-row"><span>培訓人數</span><span>30 人</span></div>
+        <div class="cc-row"><span>上課地點</span><span>銘傳大學 ／ 合作企業</span></div>
+        <div class="cc-row"><span>次產業 AI 應用課程</span><span>120 小時</span></div>
+        <div class="cc-row"><span>企業專題實作</span><span>122 小時</span></div>
+      </div>
+    </div>
+    <div class="location-note reveal">
+      <strong>訓練教室：</strong>台北市士林區基河路 130 號（銘傳大學基河校區）J316（50 人）／ J616（99 人）／ J409 電腦教室（33 台電腦，含教師機）
+    </div>
+  </div>
+</section>
+
+<section id="curriculum" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Curriculum</span>
+      <h2>雙階段課程規劃，合計 242 小時</h2>
+      <p class="lede">課程規劃依據經濟部商業發展署「服務業次產業之 AI 人才培訓地圖」對應設計，確保生活服務業所需職能模組完整覆蓋。</p>
+    </div>
+
+    <div class="stage-tag reveal">STAGE 01 · 學校場域</div>
+    <div style="display:flex;align-items:baseline;gap:16px;" class="reveal">
+      <span class="stage-hours">120 小時</span><span style="color:var(--ink-soft);font-size:.92rem;">次產業 AI 應用課程．五大職能模組全班共學</span>
+    </div>
+    <table class="curric reveal">
+      <thead>
+        <tr><th>模組</th><th>核心內容</th><th>對應培訓地圖</th><th>時數</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mod-name">01　AI 基礎與工具深度實戰</td>
+          <td>生成式 AI 原理、AI 倫理法律、Claude／ChatGPT／Gemini 深度實戰、個人化推薦邏輯</td>
+          <td class="mod-map">負責任 AI 與倫理設計</td>
+          <td class="hrs">約 30h</td>
+        </tr>
+        <tr>
+          <td class="mod-name">02　AI 客戶服務與體驗設計</td>
+          <td>顧客旅程地圖、AI 客服腳本設計、LINE OA 實作、預約管理、數位同理心</td>
+          <td class="mod-map">AI 客服工具操作與回應管理／數據導向超個人化服務</td>
+          <td class="hrs">約 24h</td>
+        </tr>
+        <tr>
+          <td class="mod-name">03　AI 內容行銷與社群創作</td>
+          <td>社群經營戰略、AI 文案寫作、短影音製作、視覺設計、廣告投放、KOL/KOC 合作</td>
+          <td class="mod-map">生成式 AI 多媒體轉化與創作</td>
+          <td class="hrs">約 30h</td>
+        </tr>
+        <tr>
+          <td class="mod-name">04　AI 服務創新與商業設計</td>
+          <td>服務設計思考、服務藍圖、AI 協助新服務開發、訂價策略與商業模式設計</td>
+          <td class="mod-map">科技賦能之服務流程創新／AI 解決方案導入與整合</td>
+          <td class="hrs">約 18h</td>
+        </tr>
+        <tr>
+          <td class="mod-name">05　AI 數據應用與自動化決策</td>
+          <td>KPI 解析、AI 驅動試算表應用、行銷成效評估與 ROI 分析</td>
+          <td class="mod-map">AI 廣告投放與精準行銷</td>
+          <td class="hrs">約 12h</td>
+        </tr>
+        <tr>
+          <td class="mod-name">綜合演練</td>
+          <td>跨模組整合驗收、個人筆試、第一階段結訓與第二階段配組建議</td>
+          <td class="mod-map">—</td>
+          <td class="hrs">3h</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="stage-divider reveal"><span class="num">02</span><div><div class="stage-tag" style="margin-bottom:2px;">STAGE 02 · 混合場域（企業現場約 20%）</div><span class="stage-hours">122 小時</span></div></div>
+    <p class="lede reveal" style="max-width:760px;">分組進駐合作企業，以「啟動→探索→執行→優化→發表」五大里程碑推進，每組配置「1 位主責業師＋1 位支援講師」，採「專題期即試用期」設計，形同一段結構化的職場前置適應期。</p>
+    <div class="milestone-track">
+      <div class="ms-card reveal"><span class="ms-tag">啟動</span><h5>企業參訪與痛點確認</h5><p>企業參訪、Kick-off、田野調查，完成問題理解確認單。</p></div>
+      <div class="ms-card reveal"><span class="ms-tag">里程碑 1</span><h5>題目確認會議</h5><p>HMW 工作坊界定題目，向業師簡報並確認範圍與時程。</p></div>
+      <div class="ms-card reveal"><span class="ms-tag">里程碑 2</span><h5>方案提報會議</h5><p>競品研究、AI 方案發想、可行性評估，業師修正回饋。</p></div>
+      <div class="ms-card reveal"><span class="ms-tag">里程碑 3</span><h5>中期檢核會議</h5><p>POC 設計、AI 工具部署、完成第一版交付物。</p></div>
+      <div class="ms-card reveal"><span class="ms-tag">里程碑 4</span><h5>成果預審會議</h5><p>企業現場實測、蒐集反饋、方案優化與文件整合。</p></div>
+      <div class="ms-card reveal"><span class="ms-tag">里程碑 5</span><h5>正式成果發表會</h5><p>15 分鐘發表＋Demo，聯合評核並進行就業媒合面談。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="partners">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Partner Ecosystem</span>
+      <h2>三層金字塔合作企業配置</h2>
+      <p class="lede">合計 8 至 10 家合作企業，橫跨生活服務業各主要次領域，確保學員在企業專題實作中獲得真實且有深度的產業歷練。</p>
+    </div>
+    <div class="pyramid">
+      <div class="tier tier-1 reveal">
+        <span class="tier-label">TIER 01 · 核心企業（3 家．深度合作）</span>
+        <h4>提供真實 AI 應用專題、指派一線主管擔任業師、承諾結訓後職缺媒合</h4>
+        <div class="tier-companies">
+          <span>堯智科技管理顧問有限公司</span>
+          <span>喜丞創意股份有限公司</span>
+          <span>亞洲共創股份有限公司</span>
+        </div>
+        <p class="desc">另有教育培訓、旅遊服務、美業等次領域核心企業洽談中。</p>
+      </div>
+      <div class="tier tier-2 reveal">
+        <span class="tier-label" style="color:var(--raspberry-deep);">TIER 02 · 一般合作企業（3–4 家）</span>
+        <h4>提供專題題目、業師資源或職缺媒合，擴大學員產業視野</h4>
+        <div class="tier-companies"><span>黠可創意行銷有限公司</span></div>
+        <p class="desc">持續拓展教育學習、健身、婚禮、寵物等次領域合作夥伴。</p>
+      </div>
+      <div class="tier tier-3 reveal">
+        <span class="tier-label" style="color:var(--raspberry-deep);">TIER 03 · 備援媒合企業（2–3 家）</span>
+        <h4>納入本校歷年合作之生活服務業夥伴網絡</h4>
+        <p class="desc">結訓後提供優先面試機會，確保整體就業媒合率達 75% 以上目標。</p>
+      </div>
+    </div>
+
+    <div class="section-head reveal" style="margin-top:60px;margin-bottom:24px;">
+      <span class="eyebrow">Project Briefs</span>
+      <h2>核心企業專題題目與需求痛點</h2>
+    </div>
+    <div class="project-grid">
+      <div class="project-card reveal">
+        <span class="pc-co">堯智科技管理顧問有限公司</span>
+        <h4>AI 驅動的生活服務業行銷顧問工作流優化方案</h4>
+        <p class="pc-pain">痛點：中小型客戶「行銷內容產能不足」與「數據散落未整合」，顧問建議缺乏即時數據支撐。</p>
+        <div class="pc-topic">打造從「接案→分析→提案→執行→追蹤」的全流程 AI 輔助 SOP。</div>
+        <div class="pc-tools"><span class="t-claude">Claude 競品分析</span><span class="t-chatgpt">ChatGPT 提案模板</span><span class="t-gemini">Gemini 數據彙整</span></div>
+      </div>
+      <div class="project-card reveal">
+        <span class="pc-co">喜丞創意股份有限公司</span>
+        <h4>AI 賦能公關活動公司的提案加速與成效報告自動化方案</h4>
+        <p class="pc-pain">痛點：多標案並行下內容產能嚴重吃緊，活動後 24 小時內需交付成效報告與花絮短影音。</p>
+        <div class="pc-topic">企劃書智慧模板將提案週期由 5 天縮短至 1 天，並打造「一鍵三生」內容引擎。</div>
+        <div class="pc-tools"><span class="t-claude">Claude 企劃模板</span><span class="t-chatgpt">ChatGPT 內容引擎</span><span class="t-gemini">Gemini KPI 儀表板</span></div>
+      </div>
+      <div class="project-card reveal">
+        <span class="pc-co">亞洲共創股份有限公司</span>
+        <h4>教育培訓機構的 AI 內容工廠與智慧招生系統建構</h4>
+        <p class="pc-pain">痛點：課程內容生產仰賴少數團隊手動產出，招生轉換率偏低、企業內訓提案耗時 3–5 個工作天。</p>
+        <div class="pc-topic">目標「內容生產提速 5 倍、招生成本降低 30%」的量化成果。</div>
+        <div class="pc-tools"><span class="t-claude">Claude 內容一條龍</span><span class="t-chatgpt">ChatGPT 提案助理</span><span class="t-gemini">Gemini 招生漏斗</span></div>
+      </div>
+      <div class="project-card reveal">
+        <span class="pc-co">黠可創意行銷有限公司</span>
+        <h4>AI 加速活動行銷公司的視覺設計與成果產出全流程優化</h4>
+        <p class="pc-pain">痛點：旺季多案並行下視覺設計產能超載，活動成果包需於 24–48 小時內完成後製與交付。</p>
+        <div class="pc-topic">視覺提案週期由 5 天壓縮至 1 天，活動當日即可產出精華短影音。</div>
+        <div class="pc-tools"><span class="t-claude">Claude 結案報告</span><span class="t-chatgpt">ChatGPT 視覺初稿</span><span class="t-gemini">Gemini 數據彙整</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="assessment" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Assessment</span>
+      <h2>雙階段、多面向學習成效評量</h2>
+      <p class="lede">確保學員在知識理解、工具操作與實戰應用三個層次均達到產業即戰力標準。</p>
+    </div>
+    <div class="assess-grid">
+      <div class="assess-card reveal">
+        <h4>第一階段．次產業 AI 應用課程</h4>
+        <span class="ac-sub">MULTI-DIMENSIONAL SCORING · 100 分制</span>
+        <div class="bar-row"><div class="bar-label"><span>期中筆試</span><span>20%</span></div><div class="bar-track"><div class="bar-fill" style="width:20%;"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span>期末筆試</span><span>20%</span></div><div class="bar-track"><div class="bar-fill" style="width:20%;"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span>實作作業</span><span>30%</span></div><div class="bar-track"><div class="bar-fill" style="width:30%;"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span>專案成果</span><span>30%</span></div><div class="bar-track"><div class="bar-fill" style="width:30%;"></div></div></div>
+        <div class="pass-note">通過標準：出席率 <b>≥90%</b> 且總分 <b>≥80 分</b></div>
+      </div>
+      <div class="assess-card reveal">
+        <h4>第二階段．企業專題實作</h4>
+        <span class="ac-sub">MILESTONE + JOINT REVIEW</span>
+        <div class="bar-row"><div class="bar-label"><span>5 大里程碑通過</span><span>20%</span></div><div class="bar-track"><div class="bar-fill" style="width:20%;"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span>專題成果品質</span><span>40%</span></div><div class="bar-track"><div class="bar-fill" style="width:40%;"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span>成果發表表現</span><span>20%</span></div><div class="bar-track"><div class="bar-fill" style="width:20%;"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span>團隊協作</span><span>10%</span></div><div class="bar-track"><div class="bar-fill" style="width:10%;"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span>實作日誌</span><span>10%</span></div><div class="bar-track"><div class="bar-fill" style="width:10%;"></div></div></div>
+        <div class="pass-note">通過標準：5 大里程碑全數通過且聯合評核總分 <b>≥80 分</b></div>
+      </div>
+    </div>
+    <div class="pass-note reveal" style="margin-top:24px;max-width:760px;">
+      <b>整體結訓標準：</b>兩階段皆達通過標準，且全程缺席時數不超過總時數 10%。未達標者由培訓單位啟動輔導程序，安排補考或補交作業，仍未通過則不予結訓，但可保留個人實作成果作為求職參考。依本校過往實務經驗，第一階段預估通過率約 85%–90%。
+    </div>
+  </div>
+</section>
+
+<section id="faculty">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Faculty</span>
+      <h2>校內學術根基 × 校外產業實戰的師資陣容</h2>
+      <p class="lede">師資團隊依「學術理論 × 產業實務 × AI 技術」三軸佈局，形成從基礎知識到實戰應用的完整教學鏈。</p>
+    </div>
+    <div class="fac-stats reveal">
+      <div><b>16 位</b><span>校內外師資合計</span></div>
+      <div><b>約 60%</b><span>業師授課比例（門檻 50%）</span></div>
+      <div><b>30+ 張</b><span>師資群國際專業認證</span></div>
+      <div><b>9 位</b><span>具 2023 年以來生成式 AI 教學經驗</span></div>
+    </div>
+    <div class="fac-grid">
+      <div class="fac-card reveal"><span class="fc-role">計畫主持人</span><h5>陳柏宇教授</h5><p>傳播學院院長兼廣告暨策略行銷學系主任，淡江大學管理科學博士，主持勞動部產業新尖兵 AI 人才培訓實戰班。</p></div>
+      <div class="fac-card reveal"><span class="fc-role">AI 技術應用</span><h5>張可佳</h5><p>《AI 職場超神助手》作者（2024 天瓏暢銷榜冠軍），Paul Wright AI Solutions IT 顧問，負責三大 AI 平台深度實戰教學。</p></div>
+      <div class="fac-card reveal"><span class="fc-role">內容策略</span><h5>鄭緯筌</h5><p>Vista School 創辦人，出版近 20 本 AI 文案暢銷書，負責 AI 入門與內容行銷策略模組。</p></div>
+      <div class="fac-card reveal"><span class="fc-role">數據顧問</span><h5>藍心</h5><p>聽儷科技創辦人暨總經理，連續 3 年主持國科會 AI 產學合作計畫，負責市場調查與 ROI 分析模組。</p></div>
+      <div class="fac-card reveal"><span class="fc-role">企業專題業師</span><h5>黃燕玲</h5><p>堯智科技創辦人，前宏盟媒體集團台灣區執行長，現任 AMT 理事長暨教育長，第二階段核心業師。</p></div>
+      <div class="fac-card reveal"><span class="fc-role">視覺與體驗設計</span><h5>李岱樺</h5><p>坤澤設計負責人，成功大學工學博士，負責 AI 視覺設計與服務設計思考模組。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-card reveal"><b>TTQS 訓練機構版 通過</b><span>勞動部勞動力發展署人才發展品質管理系統評核，效期至 116 年 8 月 13 日。</span></div>
+      <div class="trust-card reveal"><b>亞洲唯一 MSCHE 認證大學</b><span>銘傳大學為亞洲唯一通過美國大學中長程教育評鑑委員會系統評鑑的大學。</span></div>
+      <div class="trust-card reveal"><b>連續 11 年評鑑優等</b><span>承辦行政院公共工程委員會「採購專業人員訓練」，104 年至 114 年連年考核優等。</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="placement">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Job Placement</span>
+      <h2>三圈同心就業媒合模型</h2>
+      <p class="lede">憑藉多年勞動部就業學程與產業新尖兵計畫之就業輔導經驗，確保達成 75% 以上就業媒合率。</p>
+    </div>
+    <div class="circle-model">
+      <div class="circle-card reveal"><span class="cn">01</span><h4>核心企業直接職缺</h4><p>四家核心企業簽署意向書，結訓後優先開放行銷顧問助理、公關企劃、AI 內容編輯等職缺，預估 10–15 個。</p></div>
+      <div class="circle-card reveal"><span class="cn">02</span><h4>上下游轉介</h4><p>核心企業推薦學員至其客戶群與協力廠商，涵蓋餐飲、美業、教育等中小企業，預估 15–20 個。</p></div>
+      <div class="circle-card reveal"><span class="cn">03</span><h4>校友企業與人力銀行</h4><p>透過銘傳 20 萬校友網絡、AMT 協會會員企業及 104／1111 人力銀行擴大職缺，預估 15–20 個。</p></div>
+    </div>
+    <ul class="strategy-list">
+      <li class="reveal"><span class="sl-ico">01</span><span>混合場域建立企學深度互信，專題實作本身成為「長期面試」。</span></li>
+      <li class="reveal"><span class="sl-ico">02</span><span>雙軌聯合評核機制，企業導師全程記錄評價與錄用意向。</span></li>
+      <li class="reveal"><span class="sl-ico">03</span><span>成果發表會直通就業面試，核心企業高層出席現場媒合。</span></li>
+      <li class="reveal"><span class="sl-ico">04</span><span>104／1111／LinkedIn 數位履歷優化與 AI 作品集平台建置。</span></li>
+      <li class="reveal"><span class="sl-ico">05</span><span>結訓後三個月追蹤輔導，啟動二次媒合與職涯諮詢面談。</span></li>
+      <li class="reveal"><span class="sl-ico">06</span><span>建立結訓學員 LINE 社群，持續分享職缺資訊與產業動態。</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="apply" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Application Guide</span>
+      <h2>報名方式與審查流程</h2>
+      <p class="lede">招募採「多管道廣宣＋嚴格篩選」雙軌策略，預計於開班前 6 至 8 週啟動招募作業。</p>
+    </div>
+    <div class="apply-steps">
+      <div class="as-card reveal"><span class="as-num">STEP 01</span><h5>線上報名表</h5><p>填寫基本資料、學歷、工作經歷、對 AI 認識程度與興趣次領域。</p></div>
+      <div class="as-card reveal"><span class="as-num">STEP 02</span><h5>繳交自傳與作品</h5><p>500 字內自傳說明動機與職涯規劃，可附作品集加分。</p></div>
+      <div class="as-card reveal"><span class="as-num">STEP 03</span><h5>書面審查</h5><p>學歷背景 30%、相關經歷 30%、動機陳述 20%、線上測驗 20%，篩選 1.5 倍面試候選人。</p></div>
+      <div class="as-card reveal"><span class="as-num">STEP 04</span><h5>個別面試與公告</h5><p>15–20 分鐘面試，5 個工作日內公告錄取與備取名單（約 10 名）。</p></div>
+    </div>
+    <div class="pass-note reveal" style="margin-top:26px;max-width:820px;">
+      正取學員須於公告後 5 個工作日內完成線上確認報到，逾期視同棄缺由備取遞補。開訓後連續曠課 3 次或累計出席率低於 70% 者，將啟動班級輔導程序。
+    </div>
+
+    <div class="contact-panel reveal">
+      <div>
+        <h3>準備好加入了嗎？</h3>
+        <p>本班每梯次招募 30 名學員，名額有限。歡迎透過以下窗口洽詢報名時程、資格認定與企業專題內容，我們將協助你完成從報名到就業媒合的完整旅程。</p>
+        <div class="hero-tags" style="margin-top:20px;">
+          <span class="tag-chip">主辦｜經濟部商業發展署</span>
+          <span class="tag-chip">執行｜商業服務業 AI 人才辦公室</span>
+          <span class="tag-chip">申請單位｜銘傳大學</span>
+        </div>
+      </div>
+      <div class="contact-info">
+        <div><b>計畫聯絡窗口</b>巫小姐<br>02-28824564 分機 2419｜irenewu@mail.mcu.edu.tw</div>
+        <div><b>計畫聯絡窗口</b>張先生<br>0912-020-602｜12chengya@gmail.com</div>
+        <div><b>訓練地點</b>台北市士林區基河路 130 號（銘傳大學基河校區）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section-tight">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>報名前可以先確認的幾件事</h2>
+    </div>
+    <div style="max-width:820px;">
+      <details class="faq-item reveal">
+        <summary class="faq-q">沒有行銷或設計背景可以參加嗎？</summary>
+        <div class="faq-a">可以。課程從 AI 基礎工具與生活服務業應用情境開始教學，但傳播、行銷、設計相關背景於審查時尤佳，且需能配合密集課程與分組專題。</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">第二階段一定要進入企業現場嗎？</summary>
+        <div class="faq-a">是。第二階段企業現場約佔 20%，學員需赴合作企業進行田野調查、方案簡報與成果實測，形同一段結構化的職場前置適應期。</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">課程聚焦哪些 AI 工具？</summary>
+        <div class="faq-a">以 Claude、ChatGPT、Gemini 三大平台深度應用為核心，並整合 Canva、Google Sheets、LINE OA、Zapier、Adobe Premiere Rush、Power BI 等生活服務業必要工具。</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">報名後是否直接錄取？</summary>
+        <div class="faq-a">仍須依公告完成書面審查與個別面試兩階段甄選，通過後於 5 個工作日內公告錄取與備取名單。</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">未達出席門檻會有什麼影響？</summary>
+        <div class="faq-a">第一階段須出席率 ≥90% 且總分 ≥80 分；第二階段須 5 大里程碑全數通過且聯合評核 ≥80 分。未達標者將由培訓單位啟動輔導程序，仍未通過則不予結訓。</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">結訓後就業媒合如何進行？</summary>
+        <div class="faq-a">成果發表會將與就業媒合面談無縫結合，核心合作企業高層與人資主管現場出席並安排一對一媒合；結訓後另有三個月的就業追蹤與二次媒合機制。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <strong>115 年度 AI 創意內容行銷實戰班－生活服務產業進擊班</strong><br>
+      120 小時次產業 AI 應用課程 ＋ 122 小時企業專題實作
+    </div>
+    <div>
+      主辦：經濟部商業發展署｜執行單位：商業服務業 AI 人才辦公室｜申請單位：銘傳大學傳播學院
+    </div>
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:.12});
+  els.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
