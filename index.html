@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 創意內容行銷實戰班｜生活服務產業進擊班｜銘傳大學</title>
-<meta name="description" content="經濟部商業發展署 115-116年度強化服務業人才韌性計畫．銘傳大學傳播學院執行．120小時次產業AI應用課程＋122小時企業專題實作，鎖定生活服務業的Claude、ChatGPT、Gemini三大AI深度應用人才培育。">
+<meta name="description" content="經濟部商業發展署 115-116年度強化服務業人才韌性計畫．銘傳大學傳播學院執行．120小時次產業AI應用課程＋122小時企業專題實作，主攻Claude、ChatGPT、Gemini三大AI深度應用，完訓最高可領NT$50,000學習獎勵金。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -357,6 +357,43 @@
   .pc-tools .t-chatgpt{background:var(--chatgpt-bg);color:var(--chatgpt);}
   .pc-tools .t-gemini{background:var(--gemini-bg);color:var(--gemini);}
 
+  /* ---------- Reward & Registration ---------- */
+  .reward-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:stretch;}
+  @media(max-width:880px){.reward-grid{grid-template-columns:1fr;}}
+  .reward-card{
+    border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:var(--card);
+  }
+  .reward-card .rc-stage{font-family:var(--mono);font-size:.76rem;color:var(--raspberry-deep);letter-spacing:.05em;}
+  .reward-card .rc-amount{font-family:var(--serif);font-size:2.2rem;margin-top:10px;}
+  .reward-card ul{margin:14px 0 0;padding-left:18px;color:var(--ink-soft);font-size:.86rem;}
+  .reward-card li{margin-bottom:6px;}
+  .reward-total{
+    background:var(--ink);color:#fff;border-radius:var(--radius);padding:28px;
+    display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+  }
+  .reward-total .rc-stage{color:#E9B7CC;}
+  .reward-total .rc-amount{color:#fff;font-size:2.6rem;}
+  .reward-total p{color:#D8CFE0;font-size:.86rem;margin-top:10px;}
+  .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px;}
+  @media(max-width:880px){.info-grid{grid-template-columns:1fr;}}
+  .info-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;}
+  .info-card h5{font-family:var(--sans);font-weight:700;font-size:.96rem;margin-bottom:12px;}
+  .info-card ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:.86rem;}
+  .info-card li{margin-bottom:8px;}
+  .apply-cta-panel{
+    margin-top:48px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:36px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;
+  }
+  @media(max-width:720px){.apply-cta-panel{grid-template-columns:1fr;text-align:center;}}
+  .apply-cta-panel h3{font-size:1.4rem;}
+  .apply-cta-panel p{margin-top:10px;color:var(--ink-soft);font-size:.92rem;}
+  .qr-box{
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+    background:var(--paper);border-radius:16px;padding:18px 22px;
+  }
+  .qr-box img{width:120px;height:120px;border-radius:8px;}
+  .qr-box span{font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);text-align:center;}
+
   /* ---------- Assessment ---------- */
   .assess-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
   @media(max-width:880px){.assess-grid{grid-template-columns:1fr;}}
@@ -464,12 +501,12 @@
         <li><a href="#audience">報名對象</a></li>
         <li><a href="#classes">班級時程</a></li>
         <li><a href="#curriculum">課程規劃</a></li>
-        <li><a href="#partners">合作企業</a></li>
-        <li><a href="#assessment">評量標準</a></li>
+        <li><a href="#reward">學習獎勵金</a></li>
+        <li><a href="#apply">報名資訊</a></li>
       </ul>
     </nav>
     <div class="navcta">
-      <a href="#apply" class="btn btn-outline" style="padding:10px 20px;">報名資訊</a>
+      <a href="https://forms.gle/cx47R2Et2YLSxKLB9" target="_blank" rel="noopener" class="btn btn-primary" style="padding:10px 20px;">立即報名</a>
     </div>
   </div>
 </header>
@@ -486,7 +523,7 @@
           服務創新與數據決策等五大職能訓練，並進入合作企業真實專題，成為結訓即可上工的生活服務業 AI 即戰力人才。
         </p>
         <div class="hero-ctas">
-          <a href="#apply" class="btn btn-primary">查看報名方式</a>
+          <a href="https://forms.gle/cx47R2Et2YLSxKLB9" target="_blank" rel="noopener" class="btn btn-primary">立即線上報名</a>
           <a href="#curriculum" class="btn btn-ghost">檢視雙階段課程</a>
         </div>
         <div class="hero-tags">
@@ -502,9 +539,9 @@
         <span class="hc-label">PROGRAM AT A GLANCE</span>
         <div class="hero-stat-grid">
           <div class="hero-stat"><b>242</b><span>總時數（小時）</span></div>
-          <div class="hero-stat"><b>2 班 60 人</b><span>115 年招募規模</span></div>
-          <div class="hero-stat"><b>75%</b><span>預期就業媒合率</span></div>
-          <div class="hero-stat"><b>8–10 家</b><span>三層金字塔合作企業</span></div>
+          <div class="hero-stat"><b>2 班 60 人</b><span>每班 30 人為限</span></div>
+          <div class="hero-stat"><b>5 萬元</b><span>最高學習獎勵金</span></div>
+          <div class="hero-stat"><b>訓字保</b><span>受訓期間全額投保</span></div>
         </div>
       </div>
     </div>
@@ -665,7 +702,7 @@
       <div class="class-card reveal">
         <div class="cc-head"><span class="cc-tag">第一班</span></div>
         <h3>AI 創意內容行銷實戰班－生活服務產業進擊班 1</h3>
-        <div class="cc-row"><span>上課期間</span><span>115 年 9 月至 11 月</span></div>
+        <div class="cc-row"><span>上課期間</span><span>9/14（一）～ 11/19（四）</span></div>
         <div class="cc-row"><span>培訓人數</span><span>30 人</span></div>
         <div class="cc-row"><span>上課地點</span><span>銘傳大學 ／ 合作企業</span></div>
         <div class="cc-row"><span>次產業 AI 應用課程</span><span>120 小時</span></div>
@@ -674,15 +711,12 @@
       <div class="class-card reveal">
         <div class="cc-head"><span class="cc-tag">第二班</span></div>
         <h3>AI 創意內容行銷實戰班－生活服務產業進擊班 2</h3>
-        <div class="cc-row"><span>上課期間</span><span>115 年 11 月至 116 年 1 月</span></div>
+        <div class="cc-row"><span>上課期間</span><span>11/2（一）～ 1/12（二）</span></div>
         <div class="cc-row"><span>培訓人數</span><span>30 人</span></div>
         <div class="cc-row"><span>上課地點</span><span>銘傳大學 ／ 合作企業</span></div>
         <div class="cc-row"><span>次產業 AI 應用課程</span><span>120 小時</span></div>
         <div class="cc-row"><span>企業專題實作</span><span>122 小時</span></div>
       </div>
-    </div>
-    <div class="location-note reveal">
-      <strong>訓練教室：</strong>台北市士林區基河路 130 號（銘傳大學基河校區）J316（50 人）／ J616（99 人）／ J409 電腦教室（33 台電腦，含教師機）
     </div>
   </div>
 </section>
@@ -701,43 +735,37 @@
     </div>
     <table class="curric reveal">
       <thead>
-        <tr><th>模組</th><th>核心內容</th><th>對應培訓地圖</th><th>時數</th></tr>
+        <tr><th>模組</th><th>核心內容</th><th>時數</th></tr>
       </thead>
       <tbody>
         <tr>
           <td class="mod-name">01　AI 基礎與工具深度實戰</td>
           <td>生成式 AI 原理、AI 倫理法律、Claude／ChatGPT／Gemini 深度實戰、個人化推薦邏輯</td>
-          <td class="mod-map">負責任 AI 與倫理設計</td>
           <td class="hrs">約 30h</td>
         </tr>
         <tr>
           <td class="mod-name">02　AI 客戶服務與體驗設計</td>
           <td>顧客旅程地圖、AI 客服腳本設計、LINE OA 實作、預約管理、數位同理心</td>
-          <td class="mod-map">AI 客服工具操作與回應管理／數據導向超個人化服務</td>
           <td class="hrs">約 24h</td>
         </tr>
         <tr>
           <td class="mod-name">03　AI 內容行銷與社群創作</td>
           <td>社群經營戰略、AI 文案寫作、短影音製作、視覺設計、廣告投放、KOL/KOC 合作</td>
-          <td class="mod-map">生成式 AI 多媒體轉化與創作</td>
           <td class="hrs">約 30h</td>
         </tr>
         <tr>
           <td class="mod-name">04　AI 服務創新與商業設計</td>
           <td>服務設計思考、服務藍圖、AI 協助新服務開發、訂價策略與商業模式設計</td>
-          <td class="mod-map">科技賦能之服務流程創新／AI 解決方案導入與整合</td>
           <td class="hrs">約 18h</td>
         </tr>
         <tr>
           <td class="mod-name">05　AI 數據應用與自動化決策</td>
           <td>KPI 解析、AI 驅動試算表應用、行銷成效評估與 ROI 分析</td>
-          <td class="mod-map">AI 廣告投放與精準行銷</td>
           <td class="hrs">約 12h</td>
         </tr>
         <tr>
           <td class="mod-name">綜合演練</td>
           <td>跨模組整合驗收、個人筆試、第一階段結訓與第二階段配組建議</td>
-          <td class="mod-map">—</td>
           <td class="hrs">3h</td>
         </tr>
       </tbody>
@@ -756,104 +784,79 @@
   </div>
 </section>
 
-<section id="partners">
+<section id="reward" style="background:var(--paper);">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Partner Ecosystem</span>
-      <h2>三層金字塔合作企業配置</h2>
-      <p class="lede">合計 8 至 10 家合作企業，橫跨生活服務業各主要次領域，確保學員在企業專題實作中獲得真實且有深度的產業歷練。</p>
+      <span class="eyebrow">Learning Reward</span>
+      <h2>每人最高可領 NT$50,000 學習獎勵金</h2>
+      <p class="lede">完成兩階段培訓並達成出席與成果標準，即可分階段請領學習獎勵金，協助你安心投入 242 小時的密集訓練。</p>
     </div>
-    <div class="pyramid">
-      <div class="tier tier-1 reveal">
-        <span class="tier-label">TIER 01 · 核心企業（3 家．深度合作）</span>
-        <h4>提供真實 AI 應用專題、指派一線主管擔任業師、承諾結訓後職缺媒合</h4>
-        <div class="tier-companies">
-          <span>堯智科技管理顧問有限公司</span>
-          <span>喜丞創意股份有限公司</span>
-          <span>亞洲共創股份有限公司</span>
+    <div class="reward-grid">
+      <div class="reward-card reveal">
+        <span class="rc-stage">第一階段．次產業 AI 應用課程</span>
+        <div class="rc-amount">NT$20,000</div>
+        <ul>
+          <li>出席時數達該階段總時數 90% 以上</li>
+          <li>測驗成績達 80 分以上</li>
+        </ul>
+      </div>
+      <div class="reward-card reveal">
+        <span class="rc-stage">第二階段．企業專題實作課程</span>
+        <div class="rc-amount">NT$30,000</div>
+        <ul>
+          <li>出席時數達該階段總時數 90% 以上</li>
+          <li>交付專題成果報告並完成公開發表，經聯合評核通過</li>
+        </ul>
+      </div>
+      <div class="reward-total reveal">
+        <span class="rc-stage">兩階段合計</span>
+        <div class="rc-amount">最高 5 萬元</div>
+        <p>完成兩階段培訓並達成所列標準，即為完訓。應屆畢業生須於取得畢業證書並達成條件後方能領取獎勵金。</p>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card reveal">
+        <h5>報名方式</h5>
+        <ul>
+          <li>採線上申請，於本網頁完成線上報名</li>
+          <li>填寫培訓學員申請表與個資同意書，並回傳應備文件</li>
+          <li>依培訓單位規定完成甄選，通過後以 Email 通知</li>
+        </ul>
+      </div>
+      <div class="info-card reveal">
+        <h5>應備文件</h5>
+        <ul>
+          <li>身分證正反面影本</li>
+          <li>最高學歷畢業證書影本（應屆畢業生可先提供在學證明，於培訓完成後 6 個月內補交畢業證書）</li>
+          <li>最高學歷學校成績單影本</li>
+          <li>如有工作經驗，請檢附勞工保險異動紀錄或相關切結文件</li>
+        </ul>
+      </div>
+      <div class="info-card reveal">
+        <h5>報名資格</h5>
+        <ul>
+          <li>滿 18 至 35 歲（含）之青年</li>
+          <li>具教育部認定之大專校院副學士（含二專、五專）以上學歷</li>
+          <li>身分為應屆畢業生或待業者</li>
+          <li>每人限參與本計畫 1 次，且不得同時接受其他政府相關人才培訓補助</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="apply-cta-panel reveal">
+      <div>
+        <h3>準備好開始了嗎？</h3>
+        <p>掃描右側 QR Code 或點擊按鈕，立即前往線上報名表單。錄取通知將以 Email 發送，請留意信箱通知。</p>
+        <div class="hero-ctas" style="margin-top:20px;">
+          <a href="https://forms.gle/cx47R2Et2YLSxKLB9" target="_blank" rel="noopener" class="btn btn-primary" style="color:#fff;">前往線上報名表單</a>
+          <a href="https://serv.gcis.nat.gov.tw/AOCAI/_admin/assets/91f49234-077b-4007-8f59-e08a00a91599" target="_blank" rel="noopener" class="btn btn-outline">查看申請須知</a>
         </div>
-        <p class="desc">另有教育培訓、旅遊服務、美業等次領域核心企業洽談中。</p>
       </div>
-      <div class="tier tier-2 reveal">
-        <span class="tier-label" style="color:var(--raspberry-deep);">TIER 02 · 一般合作企業（3–4 家）</span>
-        <h4>提供專題題目、業師資源或職缺媒合，擴大學員產業視野</h4>
-        <div class="tier-companies"><span>黠可創意行銷有限公司</span></div>
-        <p class="desc">持續拓展教育學習、健身、婚禮、寵物等次領域合作夥伴。</p>
+      <div class="qr-box">
+        <img src="qr-code.png" alt="線上報名表單 QR Code">
+        <span>掃描加入線上報名表單</span>
       </div>
-      <div class="tier tier-3 reveal">
-        <span class="tier-label" style="color:var(--raspberry-deep);">TIER 03 · 備援媒合企業（2–3 家）</span>
-        <h4>納入本校歷年合作之生活服務業夥伴網絡</h4>
-        <p class="desc">結訓後提供優先面試機會，確保整體就業媒合率達 75% 以上目標。</p>
-      </div>
-    </div>
-
-    <div class="section-head reveal" style="margin-top:60px;margin-bottom:24px;">
-      <span class="eyebrow">Project Briefs</span>
-      <h2>核心企業專題題目與需求痛點</h2>
-    </div>
-    <div class="project-grid">
-      <div class="project-card reveal">
-        <span class="pc-co">堯智科技管理顧問有限公司</span>
-        <h4>AI 驅動的生活服務業行銷顧問工作流優化方案</h4>
-        <p class="pc-pain">痛點：中小型客戶「行銷內容產能不足」與「數據散落未整合」，顧問建議缺乏即時數據支撐。</p>
-        <div class="pc-topic">打造從「接案→分析→提案→執行→追蹤」的全流程 AI 輔助 SOP。</div>
-        <div class="pc-tools"><span class="t-claude">Claude 競品分析</span><span class="t-chatgpt">ChatGPT 提案模板</span><span class="t-gemini">Gemini 數據彙整</span></div>
-      </div>
-      <div class="project-card reveal">
-        <span class="pc-co">喜丞創意股份有限公司</span>
-        <h4>AI 賦能公關活動公司的提案加速與成效報告自動化方案</h4>
-        <p class="pc-pain">痛點：多標案並行下內容產能嚴重吃緊，活動後 24 小時內需交付成效報告與花絮短影音。</p>
-        <div class="pc-topic">企劃書智慧模板將提案週期由 5 天縮短至 1 天，並打造「一鍵三生」內容引擎。</div>
-        <div class="pc-tools"><span class="t-claude">Claude 企劃模板</span><span class="t-chatgpt">ChatGPT 內容引擎</span><span class="t-gemini">Gemini KPI 儀表板</span></div>
-      </div>
-      <div class="project-card reveal">
-        <span class="pc-co">亞洲共創股份有限公司</span>
-        <h4>教育培訓機構的 AI 內容工廠與智慧招生系統建構</h4>
-        <p class="pc-pain">痛點：課程內容生產仰賴少數團隊手動產出，招生轉換率偏低、企業內訓提案耗時 3–5 個工作天。</p>
-        <div class="pc-topic">目標「內容生產提速 5 倍、招生成本降低 30%」的量化成果。</div>
-        <div class="pc-tools"><span class="t-claude">Claude 內容一條龍</span><span class="t-chatgpt">ChatGPT 提案助理</span><span class="t-gemini">Gemini 招生漏斗</span></div>
-      </div>
-      <div class="project-card reveal">
-        <span class="pc-co">黠可創意行銷有限公司</span>
-        <h4>AI 加速活動行銷公司的視覺設計與成果產出全流程優化</h4>
-        <p class="pc-pain">痛點：旺季多案並行下視覺設計產能超載，活動成果包需於 24–48 小時內完成後製與交付。</p>
-        <div class="pc-topic">視覺提案週期由 5 天壓縮至 1 天，活動當日即可產出精華短影音。</div>
-        <div class="pc-tools"><span class="t-claude">Claude 結案報告</span><span class="t-chatgpt">ChatGPT 視覺初稿</span><span class="t-gemini">Gemini 數據彙整</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="assessment" style="background:var(--paper);">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Assessment</span>
-      <h2>雙階段、多面向學習成效評量</h2>
-      <p class="lede">確保學員在知識理解、工具操作與實戰應用三個層次均達到產業即戰力標準。</p>
-    </div>
-    <div class="assess-grid">
-      <div class="assess-card reveal">
-        <h4>第一階段．次產業 AI 應用課程</h4>
-        <span class="ac-sub">MULTI-DIMENSIONAL SCORING · 100 分制</span>
-        <div class="bar-row"><div class="bar-label"><span>期中筆試</span><span>20%</span></div><div class="bar-track"><div class="bar-fill" style="width:20%;"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span>期末筆試</span><span>20%</span></div><div class="bar-track"><div class="bar-fill" style="width:20%;"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span>實作作業</span><span>30%</span></div><div class="bar-track"><div class="bar-fill" style="width:30%;"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span>專案成果</span><span>30%</span></div><div class="bar-track"><div class="bar-fill" style="width:30%;"></div></div></div>
-        <div class="pass-note">通過標準：出席率 <b>≥90%</b> 且總分 <b>≥80 分</b></div>
-      </div>
-      <div class="assess-card reveal">
-        <h4>第二階段．企業專題實作</h4>
-        <span class="ac-sub">MILESTONE + JOINT REVIEW</span>
-        <div class="bar-row"><div class="bar-label"><span>5 大里程碑通過</span><span>20%</span></div><div class="bar-track"><div class="bar-fill" style="width:20%;"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span>專題成果品質</span><span>40%</span></div><div class="bar-track"><div class="bar-fill" style="width:40%;"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span>成果發表表現</span><span>20%</span></div><div class="bar-track"><div class="bar-fill" style="width:20%;"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span>團隊協作</span><span>10%</span></div><div class="bar-track"><div class="bar-fill" style="width:10%;"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span>實作日誌</span><span>10%</span></div><div class="bar-track"><div class="bar-fill" style="width:10%;"></div></div></div>
-        <div class="pass-note">通過標準：5 大里程碑全數通過且聯合評核總分 <b>≥80 分</b></div>
-      </div>
-    </div>
-    <div class="pass-note reveal" style="margin-top:24px;max-width:760px;">
-      <b>整體結訓標準：</b>兩階段皆達通過標準，且全程缺席時數不超過總時數 10%。未達標者由培訓單位啟動輔導程序，安排補考或補交作業，仍未通過則不予結訓，但可保留個人實作成果作為求職參考。依本校過往實務經驗，第一階段預估通過率約 85%–90%。
     </div>
   </div>
 </section>
@@ -876,7 +879,7 @@
       <div class="fac-card reveal"><span class="fc-role">AI 技術應用</span><h5>張可佳</h5><p>《AI 職場超神助手》作者（2024 天瓏暢銷榜冠軍），Paul Wright AI Solutions IT 顧問，負責三大 AI 平台深度實戰教學。</p></div>
       <div class="fac-card reveal"><span class="fc-role">內容策略</span><h5>鄭緯筌</h5><p>Vista School 創辦人，出版近 20 本 AI 文案暢銷書，負責 AI 入門與內容行銷策略模組。</p></div>
       <div class="fac-card reveal"><span class="fc-role">數據顧問</span><h5>藍心</h5><p>聽儷科技創辦人暨總經理，連續 3 年主持國科會 AI 產學合作計畫，負責市場調查與 ROI 分析模組。</p></div>
-      <div class="fac-card reveal"><span class="fc-role">企業專題業師</span><h5>黃燕玲</h5><p>堯智科技創辦人，前宏盟媒體集團台灣區執行長，現任 AMT 理事長暨教育長，第二階段核心業師。</p></div>
+      <div class="fac-card reveal"><span class="fc-role">企業專題業師</span><h5>黃燕玲</h5><p>行銷科技顧問公司創辦人，前國際媒體集團台灣區執行長，現任產業聯盟理事長暨教育長，帶領第二階段企業專題實作。</p></div>
       <div class="fac-card reveal"><span class="fc-role">視覺與體驗設計</span><h5>李岱樺</h5><p>坤澤設計負責人，成功大學工學博士，負責 AI 視覺設計與服務設計思考模組。</p></div>
     </div>
   </div>
@@ -895,22 +898,22 @@
 <section id="placement">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Job Placement</span>
-      <h2>三圈同心就業媒合模型</h2>
-      <p class="lede">憑藉多年勞動部就業學程與產業新尖兵計畫之就業輔導經驗，確保達成 75% 以上就業媒合率。</p>
+      <span class="eyebrow">Career Support</span>
+      <h2>結訓不是終點，就業支持持續三個月</h2>
+      <p class="lede">憑藉多年勞動部就業學程與產業新尖兵計畫之輔導經驗，本班提供從企業實作到求職媒合的完整銜接。</p>
     </div>
     <div class="circle-model">
-      <div class="circle-card reveal"><span class="cn">01</span><h4>核心企業直接職缺</h4><p>四家核心企業簽署意向書，結訓後優先開放行銷顧問助理、公關企劃、AI 內容編輯等職缺，預估 10–15 個。</p></div>
-      <div class="circle-card reveal"><span class="cn">02</span><h4>上下游轉介</h4><p>核心企業推薦學員至其客戶群與協力廠商，涵蓋餐飲、美業、教育等中小企業，預估 15–20 個。</p></div>
-      <div class="circle-card reveal"><span class="cn">03</span><h4>校友企業與人力銀行</h4><p>透過銘傳 20 萬校友網絡、AMT 協會會員企業及 104／1111 人力銀行擴大職缺，預估 15–20 個。</p></div>
+      <div class="circle-card reveal"><span class="cn">01</span><h4>企業專題即長期面試</h4><p>第二階段深入合作企業現場實作，讓企業業師直接看見你的實作能力與協作態度。</p></div>
+      <div class="circle-card reveal"><span class="cn">02</span><h4>成果發表直通媒合面談</h4><p>正式成果發表會後安排一對一媒合面談，並提供求職履歷與面試技巧輔導。</p></div>
+      <div class="circle-card reveal"><span class="cn">03</span><h4>結訓後追蹤與校友網絡</h4><p>建立學員 LINE 社群，持續分享職缺與產業動態，並串連銘傳校友資源擴大機會。</p></div>
     </div>
     <ul class="strategy-list">
-      <li class="reveal"><span class="sl-ico">01</span><span>混合場域建立企學深度互信，專題實作本身成為「長期面試」。</span></li>
-      <li class="reveal"><span class="sl-ico">02</span><span>雙軌聯合評核機制，企業導師全程記錄評價與錄用意向。</span></li>
-      <li class="reveal"><span class="sl-ico">03</span><span>成果發表會直通就業面試，核心企業高層出席現場媒合。</span></li>
-      <li class="reveal"><span class="sl-ico">04</span><span>104／1111／LinkedIn 數位履歷優化與 AI 作品集平台建置。</span></li>
-      <li class="reveal"><span class="sl-ico">05</span><span>結訓後三個月追蹤輔導，啟動二次媒合與職涯諮詢面談。</span></li>
-      <li class="reveal"><span class="sl-ico">06</span><span>建立結訓學員 LINE 社群，持續分享職缺資訊與產業動態。</span></li>
+      <li class="reveal"><span class="sl-ico">01</span><span>混合場域教學，讓企業提前認識你的實作表現。</span></li>
+      <li class="reveal"><span class="sl-ico">02</span><span>培訓單位與企業導師共同評核，回饋具體且即時。</span></li>
+      <li class="reveal"><span class="sl-ico">03</span><span>結訓前提供 AI 職涯能力自評，釐清個人強項與方向。</span></li>
+      <li class="reveal"><span class="sl-ico">04</span><span>協助建立數位履歷與線上作品集，作為求職核心武器。</span></li>
+      <li class="reveal"><span class="sl-ico">05</span><span>結訓後三個月追蹤輔導，提供二次媒合與職涯諮詢。</span></li>
+      <li class="reveal"><span class="sl-ico">06</span><span>建立結訓學員社群，長期分享職缺資訊與進修機會。</span></li>
     </ul>
   </div>
 </section>
@@ -923,13 +926,30 @@
       <p class="lede">招募採「多管道廣宣＋嚴格篩選」雙軌策略，預計於開班前 6 至 8 週啟動招募作業。</p>
     </div>
     <div class="apply-steps">
-      <div class="as-card reveal"><span class="as-num">STEP 01</span><h5>線上報名表</h5><p>填寫基本資料、學歷、工作經歷、對 AI 認識程度與興趣次領域。</p></div>
-      <div class="as-card reveal"><span class="as-num">STEP 02</span><h5>繳交自傳與作品</h5><p>500 字內自傳說明動機與職涯規劃，可附作品集加分。</p></div>
-      <div class="as-card reveal"><span class="as-num">STEP 03</span><h5>書面審查</h5><p>學歷背景 30%、相關經歷 30%、動機陳述 20%、線上測驗 20%，篩選 1.5 倍面試候選人。</p></div>
-      <div class="as-card reveal"><span class="as-num">STEP 04</span><h5>個別面試與公告</h5><p>15–20 分鐘面試，5 個工作日內公告錄取與備取名單（約 10 名）。</p></div>
+      <div class="as-card reveal"><span class="as-num">STEP 01</span><h5>線上報名</h5><p>點擊本頁報名連結，完成線上報名表填寫。</p></div>
+      <div class="as-card reveal"><span class="as-num">STEP 02</span><h5>回傳應備文件</h5><p>填寫培訓學員申請表、個資同意書，並依清單備妥證明文件。</p></div>
+      <div class="as-card reveal"><span class="as-num">STEP 03</span><h5>資格審查與甄選</h5><p>培訓單位依規定進行資格審查與甄選作業。</p></div>
+      <div class="as-card reveal"><span class="as-num">STEP 04</span><h5>錄取通知</h5><p>通過甄選後以 Email 發送錄取通知及後續參訓說明。</p></div>
     </div>
-    <div class="pass-note reveal" style="margin-top:26px;max-width:820px;">
-      正取學員須於公告後 5 個工作日內完成線上確認報到，逾期視同棄缺由備取遞補。開訓後連續曠課 3 次或累計出席率低於 70% 者，將啟動班級輔導程序。
+    <div class="info-grid" style="margin-top:36px;">
+      <div class="info-card reveal">
+        <h5>出席與請假</h5>
+        <ul>
+          <li>每日上課須完成簽到及簽退（上午、下午各一次）</li>
+          <li>上課時間依課程表排定，原則為週一至週五</li>
+          <li>請假含事假、病假，晚到或早退均須提前請假</li>
+          <li>未達出席時數門檻者，不符合學習獎勵金請領資格</li>
+        </ul>
+      </div>
+      <div class="info-card reveal">
+        <h5>注意事項</h5>
+        <ul>
+          <li>每名學員限參與本計畫 1 次，且不得同時接受其他政府相關人才培訓補助</li>
+          <li>錄取後將依法投保「訓字保」，保障受訓期間相關權益</li>
+          <li>如遇不可抗力或講師時間異動，培訓單位保留調整課程日期與講師之權利</li>
+          <li>課程異動請以本網站公告為準</li>
+        </ul>
+      </div>
     </div>
 
     <div class="contact-panel reveal">
@@ -972,15 +992,19 @@
       </details>
       <details class="faq-item reveal">
         <summary class="faq-q">報名後是否直接錄取？</summary>
-        <div class="faq-a">仍須依公告完成書面審查與個別面試兩階段甄選，通過後於 5 個工作日內公告錄取與備取名單。</div>
+        <div class="faq-a">仍須依公告進行資格審查與甄選，通過後將以 Email 發送錄取通知及後續參訓說明。</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">學習獎勵金如何請領？</summary>
+        <div class="faq-a">第一階段出席率達 90% 以上且測驗成績達 80 分以上，可領 NT$20,000；第二階段出席率達 90% 以上並完成專題成果發表、經聯合評核通過，可再領 NT$30,000，合計最高 NT$50,000。</div>
       </details>
       <details class="faq-item reveal">
         <summary class="faq-q">未達出席門檻會有什麼影響？</summary>
-        <div class="faq-a">第一階段須出席率 ≥90% 且總分 ≥80 分；第二階段須 5 大里程碑全數通過且聯合評核 ≥80 分。未達標者將由培訓單位啟動輔導程序，仍未通過則不予結訓。</div>
+        <div class="faq-a">未達各階段出席時數門檻者，將不符合該階段學習獎勵金請領資格；培訓單位將視情況啟動輔導程序協助跟上進度。</div>
       </details>
       <details class="faq-item reveal">
         <summary class="faq-q">結訓後就業媒合如何進行？</summary>
-        <div class="faq-a">成果發表會將與就業媒合面談無縫結合，核心合作企業高層與人資主管現場出席並安排一對一媒合；結訓後另有三個月的就業追蹤與二次媒合機制。</div>
+        <div class="faq-a">正式成果發表會後將安排一對一媒合面談，並提供履歷優化與面試技巧輔導；結訓後另有三個月的就業追蹤與二次媒合機制。</div>
       </details>
     </div>
   </div>
